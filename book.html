@@ -1,0 +1,122 @@
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Odibee+Sans|Tajawal&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lms.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+ <body onload="local()">
+    <div id="mySidenav" class="sidenav">
+        <a onclick="authorDetails()">Author</a>
+        <a onclick="bookDetails()">Book</a>
+    </div>
+
+    <div id="main">
+        <span style="font-size:30px;cursor:pointer" onclick="sideNav()">&#9776;</span>
+        <div class="text-center">
+            <div class="border">
+                <img src="logo.svg" class="img-thumbnail logo">
+                <span class="lms">Library Management System</span>
+            </div>
+            <div>
+                <button class="button" onclick="ok()">+ Add</button>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="myInput" placeholder="Search">
+                    <img src="close.svg" class="selectClose">
+                </div>
+                <div class="table-responsive">
+                    <table id="reg">
+                        <thead>
+                            <tr>
+                                <th>Si.No</th>
+                                <th>Book Name</th>
+                                <th>Book Category</th>
+                                <th>Author Name</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookTable">                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay" class="backgroundImg">
+        <img src="sheet.jpg" width="100%" style="opacity: 0.2">
+        <div id="text">
+             <div class="card">
+   
+            <h1 style="font-size: 50px;">Book Details</h1>
+            <table>
+            <form>
+                
+                    <tr>
+                <div class="form-group">
+                    <td>
+                    <label for="name" class="formLabel1">Book Name:</label>
+                </td>
+                <td>
+                    <input type="text" class="form-control" id="name" placeholder="Enter Book Name" onkeypress="nameVerify()" name="name">
+                    <div id="name_error"></div>
+                </td>
+                </div></tr>
+                <tr>
+                <div class="form-group">
+                    <td>
+                    <label for="Category" class="formLabel1">Book Category:</label></td>
+                    <td>
+                    <textarea type="text" class="form-control" id="category" placeholder="Enter Category" onkeypress="categoryVerify()" name="Category"></textarea>
+                    <div id="category_error"></div>
+                </div></td>
+            </tr>
+            <tr><td>
+                <div class="form-group">
+
+                    <label for="sel1" class="formLabel1">Author Image:</label></td>
+                    <td>
+                 <input type="file" id="image">
+                    </select>
+                    <div id="author_name"></div>                    
+                </div>
+            </td>
+            </tr>
+            <tr><td>
+                <div class="form-group">
+
+                    <label for="sel1" class="formLabel1">Author Name:</label></td>
+                    <td>
+                    <select class="form-control" id="select" onchange="authornameVerify()">
+                      <option value="default">Select</option>
+                    </select>
+                    <div id="author_name"></div>                    
+                </div>
+            </td>
+            </tr>
+            <tr>
+                <td>
+                <div class="form-group">
+                    <label for="from" class="formLabel1">Price:</label>
+                </td>
+                <td>
+                    <input type="text" class="form-control" id="price" placeholder="Enter Book Price" onkeypress="return isNumberKey(event)" name="from">
+                    <div id="price_error"></div>
+                </div>
+            </td>
+           
+              <tr>  <button type="button" class="button_1" id="bookSubmit" onclick="pressed()">Submit</button></tr>
+
+            </form>
+             </table>
+        </div>
+  </div>
+    </div>
+</body>
+<script src="lms.js"></script>
+<script src="books.js"></script>
+
+ </body>   
+</html>
